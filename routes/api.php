@@ -20,5 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('grades', GradeController::class);
-Route::resource('murids', MuridController::class);
+Route::apiResource('grades', GradeController::class);
+Route::apiResource('murids', MuridController::class);
+
+
+// Route::get('/grades', [GradeController::class, 'index']);
+

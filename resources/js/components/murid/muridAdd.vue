@@ -18,15 +18,18 @@
                             <select
                                 name=""
                                 id="grade_id"
-                                v-model="grade.kelas"
                                 class="form-control"
+                                v-model="murid.grade_id"
                             >
+                                <option selected disable>
+                                    --PILIH KELAS--
+                                </option>
                                 <option
                                     v-for="grade in grades"
                                     :key="grade.id"
-                                    :value="grade.id"
+                                    v-bind:value="grade.id"
                                 >
-                                    {{ grade.name }}
+                                    {{ grade.kelas }}
                                 </option>
                             </select>
                         </div>
@@ -77,7 +80,7 @@ export default {
             const response = await axios.get(
                 `/api/murids/${this.$route.params.id}`
             );
-            this.grade = response.data;
+            this.murid = response.data;
         }
     },
     mounted() {

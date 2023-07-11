@@ -15,7 +15,6 @@ class GradeController extends Controller
         //
         $grade = grade::all();
         return response()->json($grade);
-        // return $grade;
     }
 
     /**
@@ -71,5 +70,5 @@ class GradeController extends Controller
             'message'=>'grade deleted'
         ]);
     }
-    
+
 }
